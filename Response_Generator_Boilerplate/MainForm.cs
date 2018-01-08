@@ -20,6 +20,7 @@ namespace Response_Generator_Boilerplate
 
         private void MainForm_Load(object sender, EventArgs e) // will be left here
         {
+
         }
 
         private void _generate_Click(object sender, EventArgs e) => _responseOutput.Text = _rgInstance.GenerateResponse();
