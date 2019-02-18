@@ -141,7 +141,6 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Response Generator Boilerplate";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this._menuStrip.ResumeLayout(false);
             this._menuStrip.PerformLayout();
             this.ResumeLayout(false);
