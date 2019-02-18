@@ -7,16 +7,23 @@ using System.Threading.Tasks;
 
 namespace Response_Generator_Boilerplate
 {
-    class ResponseGenerator
+    public class ResponseGenerator
     {
         private static StringCollection _responses; // responses as a string collection, by default this is taken from the settings with Application scope
         private bool[] _isResponseUsed; // accompanying boolean array to indicate whether a response of the same index is taken or not
-        private Random _rnd = new Random(); // obligatory class implemented to get a randomized index
+        private Random _rnd = new Random(); // obligatory object implemented to get a randomized index
 
         public ResponseGenerator (StringCollection Responses) // constructor to get the string collection, by default I have set it as a string collection, you can set it to a primitive string array and vice versa, they're all indexed the same way (e.g. _responses[index])
         {
-            _responses = Responses; // commit response string collection or whatever recognized from the constructor to the instance of this class
-            _isResponseUsed = new bool[_responses.Count]; // one-time creation of the new "responses taken" boolean array
+            _responses = Responses; 
+            _isResponseUsed = new bool[_responses.Count];
+        }
+
+        public ResponseGenerator(string[] Responses)
+        {
+            _responses = new StringCollection();
+            _responses.AddRange(Responses);
+            _isResponseUsed = new bool[_responses.Count];
         }
 
         /// <summary><para>This is a method to check whether all responses are taken or not. The GenerateResponse() method is dependent on this check.</para></summary>
@@ -24,8 +31,8 @@ namespace Response_Generator_Boilerplate
         {
             for (int i = 0; i < ResponsesTaken.Length; i++)
                 if (!ResponsesTaken[i])
-                    return false; // found in for loop, stop here and return false indicating that the collection still needs to be iterated through
-            return true; // otherwise return true
+                    return false;
+            return true;
         }
 
         /// <summary><para>This is the method used for response generation. Returns a string from the collection based on the randomly assigned integer-based index.</para></summary>
