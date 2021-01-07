@@ -27,4 +27,4 @@ public string GenerateResponse();
 The constructor uses a StringCollection as a parameter. Since StringCollection objects can be indexed, it makes migrating to, for instance, a primitive string array an easy task. The name of the game for the ResponseGenerator class is to get the reference of the string collection or other indexed string array/collection type of your choice, and to return a randomized response. When implementing it into another project, please keep using the same instance of ResponseGenerator to ensure random response generation every single time. It is the same principle behind using the Random class, **always use the same instance**.
 
 ## Do I have to give you credit for using this with a project of my own or simply modifying this program?
-You do not have to give me credit, due to its simplistic nature (it's recommended, though). Have fun.
+You do not have to give me credit, due to its simplistic nature, though it would be appreciated. Have fun.
